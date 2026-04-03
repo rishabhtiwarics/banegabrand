@@ -2299,11 +2299,45 @@
         }
         .about-inner {
           grid-template-columns: 1fr;
+          gap: 28px;
         }
         .about-pcol {
           position: static;
-          max-width: 320px;
-          margin: 0 auto;
+          max-width: 100%;
+          width: 100%;
+        }
+        .about-imgwrap {
+          border-radius: 16px;
+          width: 100%;
+        }
+        .about-imgwrap img {
+          width: 100%;
+          height: 260px;
+          object-fit: cover;
+          object-position: top center;
+        }
+        .about-pname {
+          margin-top: 14px;
+        }
+        .about-pname h3 {
+          font-size: 22px;
+        }
+        .about-tl {
+          padding-left: 36px;
+        }
+        .about-tl::before {
+          left: 10px;
+        }
+        .about-tdot {
+          left: -36px;
+          width: 22px;
+          height: 22px;
+        }
+        .about-testi-cta-btn {
+          width: 100%;
+          text-align: center;
+          margin-top: 32px;
+          padding: 14px 20px;
         }
         .collection-chapter {
           grid-template-columns: 1fr;
@@ -2340,6 +2374,39 @@
         }
       }
       @media (max-width: 768px) {
+        .stats-section {
+          padding: 48px 16px;
+        }
+        .about-section {
+          padding: 50px 16px 48px;
+        }
+        .testimonials-section {
+          padding: 48px 16px;
+        }
+        .pain-section {
+          padding: 50px 16px 48px;
+        }
+        .d3-section {
+          padding: 50px 16px 48px;
+        }
+        .urgency-section {
+          padding: 48px 16px;
+        }
+        .packages-section {
+          padding: 50px 16px 52px;
+        }
+        .collection-section {
+          padding: 48px 0 52px;
+        }
+        .vs-section {
+          padding: 50px 0 52px;
+        }
+        .final-cta-section {
+          padding: 60px 16px;
+        }
+        .hero-content-wrap {
+          padding: 56px 16px;
+        }
         .hero-info-grid,
         .pain-grid {
           grid-template-columns: 1fr;
@@ -2347,12 +2414,18 @@
         .stats-cards-grid {
           grid-template-columns: 1fr 1fr;
         }
+        .stats-cards-grid .stat-card:last-child {
+          grid-column: 1 / -1;
+        }
         .testi-grid {
           grid-template-columns: 1fr;
         }
         .urgency-grid,
         .pkg-grid {
           grid-template-columns: 1fr 1fr;
+        }
+        .bb-divider {
+          margin: 14px auto 36px;
         }
       }
       @media (max-width: 680px) {
@@ -2427,6 +2500,9 @@
         }
         .ch-desc {
           font-size: 13.5px;
+        }
+        .about-imgwrap img {
+          height: 220px;
         }
       }
     </style>
