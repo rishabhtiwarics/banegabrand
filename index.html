@@ -84,13 +84,12 @@
         background: rgba(253, 251, 248, 0.97);
         border-bottom: 2px solid var(--orange);
         backdrop-filter: blur(24px);
-        padding: 0 32px;
+        padding: 10px 32px;
         box-shadow: 0 2px 20px rgba(255, 106, 0, 0.08);
       }
       .bb-topbar-inner {
         max-width: 1000px;
         margin: 0 auto;
-        height: 66px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -208,7 +207,7 @@
           var(--orange),
           transparent
         );
-        margin: 18px auto 52px;
+        margin: 18px auto 42px;
         border-radius: 2px;
         position: relative;
         z-index: 10;
@@ -433,7 +432,7 @@
         text-transform: uppercase;
         color: var(--orange);
         font-weight: 700;
-        margin-bottom: 28px;
+        margin-bottom: 14px;
       }
       .hero-badge-full {
         display: inline;
@@ -2843,6 +2842,18 @@
         display: none;
       }
 
+       @media (min-width: 768px) {
+.bb-footer-info-val{
+  font-size: 29px;
+}
+.bb-footer-info-icon {
+      font-size: 26px;
+}
+.bb-footer-info-lbl{
+    font-size: 14px;
+}
+       }
+
       @media (max-width: 860px) {
         .cta-wrap {
           grid-template-columns: 1fr;
@@ -2946,7 +2957,7 @@
           grid-template-columns: 1fr 1fr;
         }
         .bb-divider {
-          margin: 14px auto 36px;
+          margin: 14px auto 23px;
         }
         .banner-shapes .shape-1,
         .banner-shapes .shape-2,
@@ -3095,10 +3106,9 @@
           gap: 10px;
         }
         .bb-topbar {
-          padding: 0 14px;
+          padding: 10px 14px;
         }
         .bb-topbar-inner {
-          height: 54px;
           gap: 10px;
         }
         .bb-topbar-headline {
@@ -3181,6 +3191,9 @@
       }
 
       @media (max-width: 480px) {
+        .hero-sub {
+              margin-bottom: 28px;
+        }
         .pkg-grid {
           grid-template-columns: 1fr;
         }
@@ -3224,7 +3237,7 @@
           display: none;
         }
         .bb-topbar-headline {
-          font-size: 9px;
+          font-size: 10px;
         }
         .bb-topbar-cta {
           padding: 6px 8px;
@@ -3831,7 +3844,7 @@
       <div class="bb-divider reveal visible"></div>
       <div
         class="reveal"
-        style="position: relative; z-index: 10; margin-bottom: 44px"
+        style="position: relative; z-index: 10;"
       >
         <span class="pkg-next-badge"
           ><i class="bi bi-arrow-right-circle-fill"></i>Next step · Available
