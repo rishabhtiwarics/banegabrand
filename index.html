@@ -1,2811 +1,909 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>BanegaBrand – Perfume Brand Strategy Call</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      :root {
-        --dark: #2d2d3a;
-        --dark-brown: #1e0d04;
-        --dark-brown-mid: #2c1507;
-        --font-heading: "Montserrat", sans-serif;
-        --font-primary: "Inter", -apple-system, sans-serif;
-        --gray: #6b7280;
-        --gray-light: #e5e7eb;
-        --green: #16a34a;
-        --orange: #e8460a;
-        --orange-light: #fff0eb;
-        --orange-mid: #ff6b35;
-        --white: #ffffff;
-        --cream: #fdf8f5;
-        --light-bg: #f7f8fc;
-        --section-pb: 80px;
-        --section-pt: 72px;
-        --h1-size: clamp(32px, 5.5vw, 56px);
-        --h1-weight: 900;
-        --h1-lh: 1.1;
-        --h1-ls: -0.02em;
-        --h2-size: clamp(26px, 4vw, 42px);
-        --h2-weight: 900;
-        --h2-lh: 1.12;
-        --h2-ls: -0.02em;
-        --h3-size: 13px;
-        --h3-weight: 700;
-        --h3-lh: 1.5;
-        --p1-size: clamp(15px, 2vw, 17px);
-        --p1-lh: 1.8;
-        --p2-size: 14.5px;
-        --p2-lh: 1.78;
-        --p3-size: 12px;
-        --p3-lh: 1.65;
-      }
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(28px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes pulseGreen {
-        0%,
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.5;
-          transform: scale(0.8);
-        }
-      }
-      @keyframes worthPulse {
-        0%,
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.4;
-          transform: scale(0.8);
-        }
-      }
-      @keyframes pulseRing {
-        0% {
-          box-shadow: 0 0 0 0px rgba(232, 70, 10, 0.45);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(232, 70, 10, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0px rgba(232, 70, 10, 0);
-        }
-      }
-      @keyframes dotPulse {
-        0%,
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.45;
-          transform: scale(0.75);
-        }
-      }
-      @keyframes playPulse {
-        0% {
-          box-shadow:
-            0 0 0 0px rgba(232, 70, 10, 0.55),
-            0 4px 18px rgba(232, 70, 10, 0.5);
-        }
-        60% {
-          box-shadow:
-            0 0 0 14px rgba(232, 70, 10, 0),
-            0 4px 18px rgba(232, 70, 10, 0.5);
-        }
-        100% {
-          box-shadow:
-            0 0 0 0px rgba(232, 70, 10, 0),
-            0 4px 18px rgba(232, 70, 10, 0.5);
-        }
-      }
-      @keyframes playRingExpand {
-        0% {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 0.5;
-        }
-        100% {
-          transform: translate(-50%, -50%) scale(2);
-          opacity: 0;
-        }
-      }
-      body {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        font-family: var(--font-primary);
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-      .h1-type {
-        animation: fadeUp 0.7s 0.15s ease both;
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: var(--h1-size);
-        font-weight: var(--h1-weight);
-        letter-spacing: var(--h1-ls);
-        line-height: var(--h1-lh);
-        margin-bottom: 18px;
-      }
-      .h1-type .accent {
-        color: var(--orange);
-        display: inline-block;
-        position: relative;
-      }
-      .h1-type .accent::after {
-        background: linear-gradient(90deg, var(--orange), var(--orange-mid));
-        border-radius: 2px;
-        bottom: -3px;
-        content: "";
-        height: 4px;
-        left: 0;
-        opacity: 0.25;
-        position: absolute;
-        width: 100%;
-      }
-      .h2-type {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: var(--h2-size);
-        font-weight: var(--h2-weight);
-        letter-spacing: var(--h2-ls);
-        line-height: var(--h2-lh);
-        margin-bottom: 10px;
-      }
-      .h2-type .accent {
-        color: var(--orange);
-        display: inline-block;
-        position: relative;
-      }
-      .h2-type .accent::after {
-        background: linear-gradient(90deg, var(--orange), var(--orange-mid));
-        border-radius: 2px;
-        bottom: -3px;
-        content: "";
-        height: 3px;
-        left: 0;
-        opacity: 0.25;
-        position: absolute;
-        width: 100%;
-      }
-      .h3-type {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: var(--h3-size);
-        font-weight: var(--h3-weight);
-        line-height: var(--h3-lh);
-        display: block;
-        margin-bottom: 3px;
-      }
-      .p1-type {
-        animation: fadeUp 0.7s 0.22s ease both;
-        color: var(--gray);
-        font-family: var(--font-primary);
-        font-size: var(--p1-size);
-        font-weight: 400;
-        line-height: var(--p1-lh);
-        margin: 0 auto 38px;
-        max-width: 600px;
-      }
-      .p1-type strong {
-        color: var(--dark);
-        font-weight: 600;
-      }
-      .p2-type {
-        color: var(--gray);
-        font-family: var(--font-primary);
-        font-size: var(--p2-size);
-        font-weight: 400;
-        line-height: var(--p2-lh);
-        margin-bottom: 28px;
-      }
-      .p2-type strong {
-        color: var(--dark);
-        font-weight: 600;
-      }
-      .p3-type {
-        color: var(--gray);
-        font-family: var(--font-primary);
-        font-size: var(--p3-size);
-        font-weight: 400;
-        line-height: var(--p3-lh);
-      }
-      .eyebrow {
-        color: var(--orange);
-        display: inline-block;
-        font-family: var(--font-heading);
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        margin-bottom: 14px;
-        text-transform: uppercase;
-      }
-      .btn-primary {
-        align-items: center;
-        background: linear-gradient(
-          135deg,
-          var(--orange) 0%,
-          var(--orange-mid) 100%
-        );
-        border: none;
-        border-radius: 50px;
-        box-shadow: 0 6px 28px rgba(232, 70, 10, 0.35);
-        color: var(--white);
-        cursor: pointer;
-        display: inline-flex;
-        font-family: var(--font-heading);
-        font-size: 15px;
-        font-weight: 800;
-        gap: 10px;
-        letter-spacing: 0.01em;
-        line-height: 1.4;
-        padding: 16px 32px;
-        text-decoration: none;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-      }
-      .btn-primary:hover {
-        box-shadow: 0 10px 36px rgba(232, 70, 10, 0.45);
-        transform: translateY(-2px);
-        color: var(--white);
-      }
-      .btn-whatsapp {
-        align-items: center;
-        background: var(--white);
-        border: 1.5px solid var(--gray-light);
-        border-radius: 50px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-        color: var(--dark);
-        cursor: pointer;
-        display: inline-flex;
-        font-family: var(--font-heading);
-        font-size: 15px;
-        font-weight: 700;
-        gap: 10px;
-        line-height: 1.4;
-        padding: 16px 28px;
-        text-decoration: none;
-        transition:
-          transform 0.2s,
-          border-color 0.2s,
-          box-shadow 0.2s;
-      }
-      .btn-whatsapp:hover {
-        border-color: #25d366;
-        box-shadow: 0 4px 18px rgba(37, 211, 102, 0.15);
-        transform: translateY(-2px);
-        color: var(--dark);
-      }
-      .btn-whatsapp i {
-        color: #25d366;
-        font-size: 20px;
-      }
-      .dot-green {
-        animation: pulseGreen 1.6s ease-in-out infinite;
-        background: var(--green);
-        border-radius: 50%;
-        flex-shrink: 0;
-        height: 9px;
-        width: 9px;
-      }
 
-      /* HERO */
-      .hero-wrapper {
-        align-items: center;
-        background: linear-gradient(
-          135deg,
-          #f8f9ff 0%,
-          #fff5f1 40%,
-          #f0f4ff 100%
-        );
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        padding: var(--section-pt) 0 var(--section-pb);
-        position: relative;
-        width: 100%;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>
+    Start Your Perfume Brand in India – 1:1 Strategy Call @ ₹499 | BanegaBrand
+  </title>
+  <meta name="description"
+    content="Book a 2-hour 1:1 perfume brand strategy consultation with Mayank Tiwari for just ₹499. Get a personalised roadmap, verified manufacturer access, packaging guidance and profit strategy before investing ₹50K–₹5L in your brand." />
+  <meta name="keywords"
+    content="start perfume brand India, perfume brand consultation, perfume manufacturer India, private label perfume, perfume business strategy, BanegaBrand, Mayank Tiwari" />
+  <meta name="author" content="Mayank Tiwari – BanegaBrand" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://banegabrand.com/perfume-brand-strategy-call" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://banegabrand.com/perfume-brand-strategy-call" />
+  <meta property="og:title" content="Start Your Perfume Brand the Right Way – ₹499 Strategy Call | BanegaBrand" />
+  <meta property="og:description"
+    content="2-Hour 1:1 consultation with India's perfume brand expert. Roadmap, manufacturer access, packaging & profit strategy – all in one session." />
+  <meta property="og:image" content="https://banegabrand.com/public/frontend/assets/img/logo-KcH5C46Q.webp" />
+  <meta property="og:site_name" content="BanegaBrand" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Start Your Perfume Brand – ₹499 Strategy Call | BanegaBrand" />
+  <meta name="twitter:description"
+    content="2-hour 1:1 perfume brand consultation. Get roadmap, manufacturer access & profit strategy. Join 600+ founders." />
+  <meta name="twitter:image" content="https://banegabrand.com/public/frontend/assets/img/logo-KcH5C46Q.webp" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Perfume Brand Strategy Consultation",
+        "description": "2-Hour 1:1 perfume brand strategy session covering brand roadmap, manufacturer access, packaging guidance and profit strategy.",
+        "provider": {
+          "@type": "Person",
+          "name": "Mayank Tiwari",
+          "jobTitle": "Founder, BanegaBrand",
+          "url": "https://banegabrand.com"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "499",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/LimitedAvailability"
+        },
+        "url": "https://banegabrand.com/perfume-brand-strategy-call",
+        "serviceType": "Business Consulting"
       }
-      .hero-wrapper::before {
-        background: radial-gradient(
-          circle,
-          rgba(232, 70, 10, 0.1) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        content: "";
-        height: 480px;
-        pointer-events: none;
-        position: absolute;
-        right: -120px;
-        top: -120px;
-        width: 480px;
-      }
-      .hero-wrapper::after {
-        background: radial-gradient(
-          circle,
-          rgba(45, 45, 58, 0.07) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        bottom: -100px;
-        content: "";
-        height: 360px;
-        left: -80px;
-        pointer-events: none;
-        position: absolute;
-        width: 360px;
-      }
-      .hero-content {
-        animation: fadeUp 0.7s ease both;
-        position: relative;
-        text-align: center;
-        width: 100%;
-        z-index: 10;
-      }
-      .price-badge {
-        align-items: center;
-        animation: fadeUp 0.7s 0.1s ease both;
-        background: var(--white);
-        border: 1.5px solid rgba(232, 70, 10, 0.18);
-        border-radius: 100px;
-        box-shadow: 0 2px 16px rgba(232, 70, 10, 0.1);
-        display: inline-flex;
-        gap: 10px;
-        margin-bottom: 32px;
-        padding: 8px 20px;
-      }
-      .price-badge .label {
-        color: var(--gray);
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 1.5;
-      }
-      .price-badge .price {
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: 15px;
-        font-weight: 800;
-      }
-      .price-badge .sep {
-        color: var(--gray-light);
-      }
-      .benefits {
-        animation: fadeUp 0.7s 0.28s ease both;
-        display: grid;
-        gap: 13px;
-        grid-template-columns: repeat(2, 1fr);
-        margin: 0 auto 42px;
-        max-width: 640px;
-      }
-      .benefit-card {
-        align-items: flex-start;
-        background: var(--white);
-        border: 1.5px solid var(--gray-light);
-        border-radius: 14px;
-        display: flex;
-        gap: 12px;
-        padding: 15px 17px;
-        text-align: left;
-        transition:
-          border-color 0.2s,
-          box-shadow 0.2s;
-      }
-      .benefit-card:hover {
-        border-color: rgba(232, 70, 10, 0.28);
-        box-shadow: 0 4px 20px rgba(232, 70, 10, 0.09);
-      }
-      .benefit-icon {
-        align-items: center;
-        background: var(--orange-light);
-        border-radius: 10px;
-        display: flex;
-        flex-shrink: 0;
-        height: 36px;
-        justify-content: center;
-        width: 36px;
-        font-size: 16px;
-        color: var(--orange);
-      }
-      .cta-group {
-        animation: fadeUp 0.7s 0.35s ease both;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        justify-content: center;
-      }
-      .trust-row {
-        animation: fadeUp 0.7s 0.42s ease both;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        margin-top: 40px;
-      }
-      .trust-item {
-        align-items: center;
-        color: var(--gray);
-        display: flex;
-        font-size: 13px;
-        font-weight: 500;
-        gap: 6px;
-        line-height: 1.5;
-      }
-      .trust-item i {
-        color: var(--green);
-        font-size: 14px;
-        flex-shrink: 0;
-      }
-      .trust-img-wrap {
-        animation: fadeUp 0.7s 0.5s ease both;
-        margin-top: 40px;
-        width: 100%;
-      }
-      .trust-img-wrap img {
-        max-width: 640px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 18px;
-        border: 1.5px solid var(--gray-light);
-        display: block;
-        margin: 0 auto;
-      }
+    </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
 
-      /* WORTH */
-      .worth-section {
-        padding: var(--section-pt) 0 var(--section-pb);
-        text-align: center;
-        width: 100%;
-      }
-      .worth-inner {
-        margin: 0 auto;
-        position: relative;
-        z-index: 10;
-      }
-      .worth-sub {
-        align-items: center;
-        color: var(--gray);
-        display: flex;
-        flex-wrap: wrap;
-        font-size: 14px;
-        font-weight: 500;
-        gap: 8px;
-        justify-content: center;
-        line-height: 1.65;
-        margin-bottom: 40px;
-      }
-      .worth-sub strong {
-        color: var(--dark);
-        font-weight: 700;
-      }
-      .worth-sub-dot {
-        background: var(--orange);
-        border-radius: 50%;
-        flex-shrink: 0;
-        height: 5px;
-        opacity: 0.45;
-        width: 5px;
-      }
-      .worth-swiper-wrap {
-        width: 100%;
-        margin: 16px 0 20px;
-        overflow: hidden;
-      }
-      .swiper {
-        width: 100%;
-        overflow: hidden;
-      }
-      .swiper-wrapper {
-        align-items: stretch;
-        transition-timing-function: linear !important;
-        margin-top: 10px !important;
-      }
-      .swiper-slide {
-        height: auto;
-        display: flex;
-        justify-content: center;
-      }
-      .worth-card {
-        align-items: center;
-        background: var(--white);
-        border: 1.5px solid var(--gray-light);
-        border-radius: 18px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        height: 100%;
-        padding: 20px 18px 16px;
-        position: relative;
-        transition:
-          border-color 0.2s,
-          box-shadow 0.2s,
-          transform 0.2s;
-        width: 100%;
-      }
-      .worth-card:hover {
-        border-color: rgba(232, 70, 10, 0.28);
-        box-shadow: 0 6px 24px rgba(232, 70, 10, 0.1);
-        transform: translateY(-3px);
-      }
-      .worth-card.featured {
-        border-color: var(--orange);
-        border-width: 2px;
-      }
-      .worth-card-badge {
-        background: linear-gradient(135deg, var(--orange), var(--orange-mid));
-        border-radius: 100px;
-        box-shadow: 0 3px 12px rgba(232, 70, 10, 0.35);
-        color: #fff;
-        font-family: var(--font-heading);
-        font-size: 9px;
-        font-weight: 800;
-        left: 50%;
-        letter-spacing: 0.08em;
-        padding: 4px 12px;
-        position: absolute;
-        text-transform: uppercase;
-        top: -11px;
-        transform: translateX(-50%);
-        white-space: nowrap;
-      }
-      .worth-card-icon {
-        align-items: center;
-        background: var(--orange-light);
-        border-radius: 12px;
-        display: flex;
-        flex-shrink: 0;
-        height: 44px;
-        justify-content: center;
-        width: 44px;
-        font-size: 20px;
-        color: var(--orange);
-      }
-      .worth-card-value {
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: clamp(22px, 3vw, 30px);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1;
-      }
-      .worth-card-label {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: 11px;
-        font-weight: 700;
-        line-height: 1.45;
-        text-align: center;
-      }
-      .worth-card-desc {
-        color: var(--gray);
-        font-size: 10.5px;
-        line-height: 1.6;
-        text-align: center;
-      }
-      .worth-slots-pill {
-        align-items: center;
-        background: var(--white);
-        border: 1.5px solid rgba(232, 70, 10, 0.22);
-        border-radius: 100px;
-        box-shadow: 0 2px 16px rgba(232, 70, 10, 0.1);
-        color: var(--orange);
-        display: inline-flex;
-        font-family: var(--font-heading);
-        font-size: 13px;
-        font-weight: 700;
-        gap: 10px;
-        padding: 11px 24px;
-      }
-      .worth-slots-dot {
-        animation: worthPulse 1.4s ease-in-out infinite;
-        background: var(--orange);
-        border-radius: 50%;
-        flex-shrink: 0;
-        height: 9px;
-        width: 9px;
-      }
+<body>
+  <div class="hero-wrapper">
+    <div class="container">
+      <div class="brand-tabs-wrap">
+        <nav class="brand-tabs" role="tablist" aria-label="Brand category tabs">
+          <a href="/index.html" class="brand-tab active" role="tab" aria-selected="true"
+            aria-label="Perfume brand strategy">
+            <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i>
+            Perfume
+          </a>
+          <a href="/ayurvedabrandstrategycall.html" class="brand-tab" role="tab" aria-selected="false"
+            aria-label="Ayurveda brand strategy">
+            <i class="fa-solid fa-seedling" aria-hidden="true"></i> Ayurveda
+          </a>
+          <a href="/index.html" class="brand-tab" role="tab" aria-selected="false"
+            aria-label="Cosmetics brand strategy">
+            <i class="fa-solid fa-wand-sparkles" aria-hidden="true"></i>
+            Cosmetics
+          </a>
+        </nav>
+      </div>
 
-      /* ABOUT */
-      .about-section {
-        background: linear-gradient(
-          135deg,
-          #f8f9ff 0%,
-          #fff5f1 40%,
-          #f0f4ff 100%
-        );
-        padding: var(--section-pt) 0 var(--section-pb);
-        width: 100%;
-      }
-      .about-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        align-items: center;
-      }
-      .about-divider {
-        background: linear-gradient(90deg, var(--orange), var(--orange-mid));
-        border-radius: 2px;
-        height: 3px;
-        margin-bottom: 18px;
-        opacity: 0.3;
-        width: 44px;
-      }
-      .about-name {
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: 15px;
-        font-weight: 700;
-        display: block;
-        margin-bottom: 2px;
-      }
-      .about-role {
-        color: var(--gray);
-        font-size: 13px;
-        display: block;
-        margin-bottom: 20px;
-      }
-      .about-features {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .about-feature {
-        align-items: flex-start;
-        display: flex;
-        gap: 12px;
-      }
-      .about-feature-icon {
-        align-items: center;
-        background: var(--orange-light);
-        border-radius: 9px;
-        display: flex;
-        flex-shrink: 0;
-        height: 34px;
-        justify-content: center;
-        margin-top: 1px;
-        width: 34px;
-        font-size: 14px;
-        color: var(--orange);
-      }
-      .feat-title {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 1.5;
-        display: block;
-      }
-      .feat-desc {
-        color: var(--gray);
-        font-size: 11px;
-        line-height: 1.6;
-      }
-      .img-col {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .img-frame {
-        border-radius: 24px;
-        overflow: hidden;
-        border: 1.5px solid var(--gray-light);
-        position: relative;
-        width: 100%;
-        max-width: 420px;
-        aspect-ratio: 3/4;
-        box-shadow: 0 16px 48px rgba(45, 45, 58, 0.13);
-      }
-      .img-frame::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          transparent 50%,
-          rgba(45, 45, 58, 0.62) 100%
-        );
-        z-index: 1;
-        pointer-events: none;
-      }
-      .img-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-      }
-      .img-overlay {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        z-index: 2;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 12px;
-      }
-      .founder-info {
-        color: #fff;
-      }
-      .founder-name {
-        font-family: var(--font-heading);
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 1.3;
-        display: block;
-      }
-      .founder-role {
-        font-size: 12px;
-        opacity: 0.8;
-        display: block;
-      }
-      .avail-pill {
-        background: var(--white);
-        border-radius: 100px;
-        padding: 8px 14px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-        border: 1.5px solid var(--gray-light);
-      }
-      .avail-text {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: 11px;
-        font-weight: 700;
-        white-space: nowrap;
-      }
-      .about-cta {
-        margin-top: 28px;
-      }
-
-      /* VIDEO */
-      .video-section {
-        padding: var(--section-pt) 0 var(--section-pb);
-        width: 100%;
-        background: var(--white);
-      }
-      .video-section-header {
-        text-align: center;
-        margin-bottom: 48px;
-      }
-      .video-section-sub {
-        color: var(--gray);
-        font-size: 15px;
-        line-height: 1.75;
-        margin: 0 auto;
-        max-width: 560px;
-      }
-      .vid-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-      .vid-card {
-        background: var(--white);
-        border: 1.5px solid var(--gray-light);
-        border-radius: 20px;
-        overflow: hidden;
-        cursor: pointer;
-        transition:
-          border-color 0.25s,
-          box-shadow 0.25s,
-          transform 0.25s;
-        position: relative;
-      }
-      .vid-card:hover {
-        border-color: rgba(232, 70, 10, 0.35);
-        box-shadow: 0 12px 40px rgba(232, 70, 10, 0.14);
-        transform: translateY(-5px);
-      }
-      .vid-thumb {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16/9;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
-      .vid-thumb iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        transform: translate(-50%, -50%) scale(1.04);
-        border: none;
-        pointer-events: none;
-      }
-      .vid-glass {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.08) 0%,
-          rgba(0, 0, 0, 0) 40%,
-          rgba(0, 0, 0, 0.55) 100%
-        );
-        z-index: 2;
-        transition: background 0.25s;
-      }
-      .vid-card:hover .vid-glass {
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.12) 0%,
-          rgba(0, 0, 0, 0.04) 40%,
-          rgba(0, 0, 0, 0.65) 100%
-        );
-      }
-      .vid-play-btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 56px;
-        height: 56px;
-        background: linear-gradient(135deg, var(--orange), var(--orange-mid));
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
-        animation: playPulse 2s ease-in-out infinite;
-        transition: transform 0.2s;
-      }
-      .vid-play-btn::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        background: transparent;
-        border: 2px solid rgba(232, 70, 10, 0.6);
-        animation: playRingExpand 2s ease-out infinite;
-      }
-      .vid-card:hover .vid-play-btn {
-        transform: translate(-50%, -50%) scale(1.12);
-        animation: none;
-        box-shadow: 0 6px 28px rgba(232, 70, 10, 0.5);
-      }
-      .vid-play-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-        margin-left: 3px;
-        flex-shrink: 0;
-      }
-      .vid-mute-badge {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        z-index: 4;
-        background: rgba(0, 0, 0, 0.62);
-        color: #fff;
-        font-family: var(--font-heading);
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        padding: 4px 10px;
-        border-radius: 100px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        pointer-events: none;
-      }
-      .vid-mute-badge i {
-        font-size: 9px;
-      }
-      .vid-watch-badge {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 4;
-        background: rgba(0, 0, 0, 0.55);
-        color: #fff;
-        font-size: 9px;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 100px;
-        font-family: var(--font-heading);
-        letter-spacing: 0.06em;
-        pointer-events: none;
-      }
-      .vid-info {
-        padding: 16px 18px 20px;
-        background: var(--white);
-      }
-      .vid-tag {
-        display: inline-block;
-        background: var(--orange-light);
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: 9px;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 3px 10px;
-        border-radius: 100px;
-        margin-bottom: 8px;
-      }
-      .vid-title {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1.45;
-        margin-bottom: 5px;
-      }
-      .vid-desc {
-        color: var(--gray);
-        font-size: 11.5px;
-        line-height: 1.6;
-      }
-      .vid-bottom-row {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px solid var(--gray-light);
-      }
-      .vid-bottom-icon {
-        width: 22px;
-        height: 22px;
-        background: var(--orange-light);
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        color: var(--orange);
-        font-size: 9px;
-      }
-      .vid-bottom-label {
-        color: var(--gray);
-        font-size: 10.5px;
-        font-weight: 600;
-        font-family: var(--font-heading);
-      }
-      .vid-bottom-label span {
-        color: var(--orange);
-      }
-      .vid-cta {
-        display: flex;
-        justify-content: center;
-        margin-top: 44px;
-      }
-      .vid-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(255, 255, 255, 0.88);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        z-index: 9999;
-        align-items: center;
-        justify-content: center;
-      }
-      .vid-overlay.active {
-        display: flex;
-      }
-      .vid-overlay-shell {
-        position: relative;
-        width: 90vw;
-        max-width: 920px;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-      .vid-overlay-topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 0 14px;
-      }
-      .vid-overlay-close {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: transparent;
-        border: 1.5px solid var(--gray-light);
-        border-radius: 50px;
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: 12px;
-        font-weight: 700;
-        cursor: pointer;
-        padding: 8px 16px;
-        transition:
-          border-color 0.2s,
-          box-shadow 0.2s,
-          background 0.2s;
-        letter-spacing: 0.04em;
-      }
-      .vid-overlay-close i {
-        font-size: 11px;
-        color: var(--orange);
-      }
-      .vid-overlay-close:hover {
-        border-color: rgba(232, 70, 10, 0.3);
-        background: var(--orange-light);
-        box-shadow: 0 2px 12px rgba(232, 70, 10, 0.1);
-      }
-      .vid-overlay-title {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: 13px;
-        font-weight: 700;
-        text-align: right;
-        line-height: 1.4;
-      }
-      .vid-overlay-title small {
-        display: block;
-        color: var(--gray);
-        font-size: 10.5px;
-        font-weight: 500;
-        margin-top: 1px;
-      }
-      .vid-overlay-inner {
-        width: 100%;
-        aspect-ratio: 16/9;
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow:
-          0 24px 80px rgba(45, 45, 58, 0.22),
-          0 0 0 1.5px var(--gray-light);
-      }
-      .vid-overlay-inner iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-      }
-      .vid-overlay-hint {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 7px;
-        margin-top: 14px;
-        color: var(--gray);
-        font-size: 12px;
-        font-weight: 500;
-      }
-      .vid-overlay-hint i {
-        font-size: 12px;
-        color: var(--orange);
-      }
-
-      /* PACKAGES */
-      .packages-section {
-        padding: var(--section-pt) 0 var(--section-pb);
-        background: linear-gradient(
-          135deg,
-          #f8f9ff 0%,
-          #fff5f1 40%,
-          #f0f4ff 100%
-        );
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-      .pkg-section-header {
-        text-align: center;
-        margin-bottom: 16px;
-      }
-      .pkg-section-sub {
-        color: var(--gray);
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 1.65;
-      }
-      .pkg-section-sub strong {
-        color: var(--dark);
-        font-weight: 700;
-      }
-      .notice-pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--white);
-        border: 1.5px solid rgba(232, 70, 10, 0.22);
-        border-radius: 100px;
-        padding: 9px 20px;
-        margin-bottom: 44px;
-        font-family: var(--font-heading);
-        font-size: 12px;
-        font-weight: 700;
-        color: var(--gray);
-        box-shadow: 0 2px 16px rgba(232, 70, 10, 0.08);
-      }
-      .notice-pill .pill-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--orange);
-        flex-shrink: 0;
-        opacity: 0.7;
-      }
-      .notice-pill strong {
-        color: var(--orange);
-      }
-      .packages-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        position: relative;
-        z-index: 2;
-      }
-      .pkg-card {
-        background: var(--white);
-        border: 1.5px solid var(--gray-light);
-        border-radius: 24px;
-        padding: 36px 28px 32px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        overflow: hidden;
-        transition:
-          border-color 0.22s,
-          box-shadow 0.22s,
-          transform 0.22s;
-      }
-      .pkg-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gray-light);
-        border-radius: 24px 24px 0 0;
-        transition: background 0.22s;
-      }
-      .pkg-card:hover {
-        border-color: rgba(232, 70, 10, 0.28);
-        box-shadow: 0 16px 48px rgba(232, 70, 10, 0.11);
-        transform: translateY(-5px);
-      }
-      .pkg-card:hover::before {
-        background: linear-gradient(90deg, var(--orange), var(--orange-mid));
-      }
-      .pkg-card.pkg-featured {
-        border-color: var(--orange);
-        border-width: 2px;
-        box-shadow: 0 10px 40px rgba(232, 70, 10, 0.15);
-        transform: translateY(-6px);
-      }
-      .pkg-card.pkg-featured::before {
-        background: linear-gradient(90deg, var(--orange), var(--orange-mid));
-      }
-      .pkg-badge {
-        position: absolute;
-        top: -1px;
-        right: 24px;
-        background: linear-gradient(135deg, var(--orange), var(--orange-mid));
-        color: #fff;
-        font-family: var(--font-heading);
-        font-size: 9px;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 5px 14px;
-        border-radius: 0 0 12px 12px;
-        box-shadow: 0 3px 12px rgba(232, 70, 10, 0.35);
-        white-space: nowrap;
-      }
-      .pkg-type-label {
-        color: var(--gray);
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-family: var(--font-heading);
-        margin-bottom: 6px;
-        display: block;
-      }
-      .pkg-name {
-        color: var(--dark);
-        font-family: var(--font-heading);
-        font-size: clamp(18px, 2.2vw, 24px);
-        font-weight: 900;
-        letter-spacing: -0.02em;
-        line-height: 1.2;
-        margin-bottom: 4px;
-      }
-      .pkg-tagline {
-        color: var(--gray);
-        font-size: 13px;
-        font-weight: 500;
-        margin-bottom: 20px;
-        line-height: 1.5;
-      }
-      .pkg-price-row {
-        display: flex;
-        align-items: flex-end;
-        gap: 8px;
-        margin-bottom: 6px;
-      }
-      .pkg-price {
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: clamp(28px, 3.5vw, 38px);
-        font-weight: 900;
-        letter-spacing: -0.03em;
-        line-height: 1;
-      }
-      .pkg-price-note {
-        color: var(--gray);
-        font-size: 12px;
-        font-weight: 500;
-        padding-bottom: 4px;
-        line-height: 1.4;
-      }
-      .pkg-divider {
-        background: var(--gray-light);
-        height: 1px;
-        margin: 18px 0;
-        border-radius: 1px;
-      }
-      .pkg-features {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 24px;
-        flex: 1;
-      }
-      .pkg-features li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--dark);
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 1.5;
-      }
-      .pkg-features li .feat-icon {
-        width: 22px;
-        height: 22px;
-        background: var(--orange-light);
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        color: var(--orange);
-        font-size: 10px;
-      }
-      .pkg-avail-note {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--light-bg);
-        border: 1.5px solid var(--gray-light);
-        border-radius: 12px;
-        padding: 11px 14px;
-        margin-bottom: 18px;
-      }
-      .pkg-avail-note .avail-icon {
-        color: var(--orange);
-        font-size: 13px;
-        flex-shrink: 0;
-      }
-      .pkg-avail-text {
-        font-size: 11.5px;
-        font-weight: 500;
-        color: var(--gray);
-        line-height: 1.5;
-      }
-      .pkg-avail-text strong {
-        color: var(--dark);
-        font-weight: 700;
-      }
-      .btn-pkg {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        border-radius: 50px;
-        font-family: var(--font-heading);
-        font-size: 13.5px;
-        font-weight: 800;
-        padding: 14px 20px;
-        text-decoration: none;
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-top: auto;
-      }
-      .btn-pkg-primary {
-        background: linear-gradient(
-          135deg,
-          var(--orange) 0%,
-          var(--orange-mid) 100%
-        );
-        color: var(--white);
-        box-shadow: 0 6px 28px rgba(232, 70, 10, 0.35);
-      }
-      .btn-pkg-primary:hover {
-        box-shadow: 0 10px 36px rgba(232, 70, 10, 0.45);
-        transform: translateY(-2px);
-        color: var(--white);
-      }
-      .btn-pkg-outline {
-        background: var(--white);
-        color: var(--dark);
-        border: 1.5px solid var(--gray-light);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-      }
-      .btn-pkg-outline:hover {
-        border-color: rgba(232, 70, 10, 0.3);
-        box-shadow: 0 4px 18px rgba(232, 70, 10, 0.12);
-        transform: translateY(-2px);
-        color: var(--dark);
-      }
-      .pkg-compare-note {
-        text-align: center;
-        margin-top: 32px;
-        color: var(--gray);
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 1.65;
-      }
-      .pkg-compare-note strong {
-        color: var(--dark);
-        font-weight: 700;
-      }
-      .pkg-compare-note a {
-        color: var(--orange);
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .pkg-compare-note a:hover {
-        text-decoration: underline;
-      }
-
-      /* ═══════════════════════════════════
-   CTA SECTION — integrated, no dupe CSS
-═══════════════════════════════════ */
-      .cta-section {
-        padding: var(--section-pt) 0 var(--section-pb);
-        background: var(--white);
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-      .cta-section::before {
-        content: "";
-        position: absolute;
-        top: -120px;
-        right: -120px;
-        width: 420px;
-        height: 420px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(232, 70, 10, 0.07) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .cta-section::after {
-        content: "";
-        position: absolute;
-        bottom: -80px;
-        left: -80px;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(45, 45, 58, 0.05) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .cta-section-header {
-        text-align: center;
-        margin-bottom: 44px;
-      }
-      .cta-section-sub {
-        color: var(--gray);
-        font-size: 15px;
-        line-height: 1.75;
-        margin: 0 auto;
-        max-width: 520px;
-      }
-      .cta-card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow:
-          0 20px 64px rgba(30, 13, 4, 0.18),
-          0 4px 20px rgba(232, 70, 10, 0.1);
-        position: relative;
-        z-index: 2;
-      }
-      .cta-left {
-        background: linear-gradient(
-          145deg,
-          #2c1507 0%,
-          #1a0b03 60%,
-          #0f0601 100%
-        );
-        padding: 52px 44px 48px;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-      .cta-left-deco {
-        position: absolute;
-        top: -60px;
-        right: -60px;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(232, 70, 10, 0.18);
-        pointer-events: none;
-      }
-      .cta-left-deco2 {
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        border: 1px solid rgba(232, 70, 10, 0.1);
-        pointer-events: none;
-      }
-      .cta-left-glow {
-        position: absolute;
-        bottom: -80px;
-        left: -60px;
-        width: 260px;
-        height: 260px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(232, 70, 10, 0.12) 0%,
-          transparent 70%
-        );
-        pointer-events: none;
-      }
-      .cta-eyebrow {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 22px;
-      }
-      .cta-eyebrow-line {
-        width: 28px;
-        height: 2px;
-        background: var(--orange);
-        border-radius: 2px;
-        flex-shrink: 0;
-      }
-      .cta-eyebrow-text {
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
-      .cta-heading {
-        font-family: var(--font-heading);
-        font-size: clamp(26px, 3.2vw, 38px);
-        font-weight: 900;
-        line-height: 1.12;
-        letter-spacing: -0.02em;
-        color: var(--white);
-        margin-bottom: 18px;
-      }
-      .cta-heading em {
-        font-style: italic;
-        color: var(--orange);
-        font-weight: 900;
-      }
-      .cta-para {
-        color: rgba(255, 255, 255, 0.62);
-        font-size: 13.5px;
-        line-height: 1.72;
-        margin-bottom: 28px;
-        max-width: 320px;
-      }
-      .cta-para strong {
-        color: rgba(255, 255, 255, 0.88);
-        font-weight: 600;
-      }
-      .cta-pills {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-      .cta-pill {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 100px;
-        padding: 9px 14px;
-        color: rgba(255, 255, 255, 0.85);
-        font-family: var(--font-heading);
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        transition:
-          background 0.2s,
-          border-color 0.2s;
-      }
-      .cta-pill:hover {
-        background: rgba(232, 70, 10, 0.14);
-        border-color: rgba(232, 70, 10, 0.3);
-      }
-      .cta-pill-check {
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: rgba(232, 70, 10, 0.22);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .cta-pill-check i {
-        color: var(--orange);
-        font-size: 7px;
-      }
-      .cta-right {
-        background: var(--cream);
-        padding: 52px 44px 48px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0;
-      }
-      .cta-session-label {
-        color: var(--gray);
-        font-family: var(--font-heading);
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
-      .cta-price-row {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-        margin-bottom: 8px;
-      }
-      .cta-price-old {
-        color: var(--gray);
-        font-family: var(--font-heading);
-        font-size: 18px;
-        font-weight: 700;
-        text-decoration: line-through;
-        opacity: 0.7;
-      }
-      .cta-price-new {
-        color: var(--orange);
-        font-family: var(--font-heading);
-        font-size: clamp(48px, 5.5vw, 66px);
-        font-weight: 900;
-        letter-spacing: -0.03em;
-        line-height: 1;
-      }
-      .cta-price-sub {
-        color: var(--gray);
-        font-size: 12.5px;
-        font-weight: 500;
-        margin-bottom: 28px;
-        line-height: 1.5;
-      }
-      .cta-price-sub span {
-        color: rgba(107, 114, 128, 0.5);
-        margin: 0 4px;
-      }
-      .btn-cta-book {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        width: 100%;
-        padding: 17px 24px;
-        background: linear-gradient(
-          135deg,
-          var(--orange) 0%,
-          var(--orange-mid) 100%
-        );
-        border: none;
-        border-radius: 50px;
-        color: var(--white);
-        font-family: var(--font-heading);
-        font-size: 15px;
-        font-weight: 800;
-        letter-spacing: 0.01em;
-        cursor: pointer;
-        text-decoration: none;
-        box-shadow: 0 8px 28px rgba(232, 70, 10, 0.38);
-        transition:
-          transform 0.2s,
-          box-shadow 0.2s;
-        margin-bottom: 12px;
-        animation: pulseRing 2.4s ease-in-out infinite;
-      }
-      .btn-cta-book:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 36px rgba(232, 70, 10, 0.48);
-        color: var(--white);
-        animation: none;
-      }
-      .btn-cta-book-dot {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 2.5px solid rgba(255, 255, 255, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .btn-cta-book-dot::after {
-        content: "";
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.9);
-      }
-      .btn-cta-wa {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-        padding: 15px 24px;
-        background: #f0fdf4;
-        border: 1.5px solid #d1f0da;
-        border-radius: 50px;
-        color: #16a34a;
-        font-family: var(--font-heading);
-        font-size: 14.5px;
-        font-weight: 700;
-        cursor: pointer;
-        text-decoration: none;
-        transition:
-          background 0.2s,
-          border-color 0.2s,
-          transform 0.2s,
-          box-shadow 0.2s;
-        margin-bottom: 24px;
-      }
-      .btn-cta-wa:hover {
-        background: #dcfce7;
-        border-color: #86efac;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 18px rgba(22, 163, 74, 0.15);
-        color: #16a34a;
-      }
-      .btn-cta-wa i {
-        font-size: 19px;
-        color: #25d366;
-      }
-      .cta-trust-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        padding-top: 18px;
-        border-top: 1px solid var(--gray-light);
-      }
-      .cta-trust-item {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        color: var(--gray);
-        font-size: 11.5px;
-        font-weight: 600;
-        font-family: var(--font-heading);
-        white-space: nowrap;
-      }
-      .cta-trust-item i {
-        font-size: 11px;
-      }
-      .cta-trust-item .ti-lock {
-        color: #94a3b8;
-      }
-      .cta-trust-item .ti-users {
-        color: var(--dark);
-      }
-      .cta-trust-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--orange);
-        flex-shrink: 0;
-        animation: dotPulse 1.6s ease-in-out infinite;
-      }
-      .cta-trust-sep {
-        width: 1px;
-        height: 18px;
-        background: var(--gray-light);
-        flex-shrink: 0;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 991px) {
-        .about-row {
-          grid-template-columns: 1fr;
-          gap: 36px;
-        }
-        .img-col {
-          align-items: center;
-          order: -1;
-        }
-        .img-frame {
-          max-width: 340px;
-        }
-        .left-col {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-        .about-divider {
-          margin: 0 auto 18px;
-        }
-        .about-features {
-          align-items: center;
-          width: 100%;
-        }
-        .about-cta {
-          display: flex;
-          justify-content: center;
-        }
-        .packages-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-        }
-        .pkg-card.pkg-featured {
-          transform: none;
-        }
-        .vid-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .cta-card {
-          grid-template-columns: 1fr;
-        }
-        .cta-left {
-          padding: 40px 28px 36px;
-        }
-        .cta-right {
-          padding: 36px 28px 36px;
-        }
-      }
-      @media (max-width: 767px) {
-        :root {
-          --section-pt: 56px;
-          --section-pb: 60px;
-        }
-        .hero-wrapper {
-          min-height: auto;
-          padding: 60px 0 56px;
-        }
-        .price-badge {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 6px;
-          padding: 10px 18px;
-        }
-        .price-badge .label {
-          font-size: 12px;
-        }
-        .cta-group {
-          flex-direction: column;
-          align-items: center;
-          gap: 12px;
-        }
-        .btn-primary,
-        .btn-whatsapp {
-          justify-content: center;
-          max-width: 340px;
-          width: 100%;
-          font-size: 15px;
-          padding: 16px 24px;
-        }
-        .trust-row {
-          gap: 12px 16px;
-          margin-top: 30px;
-        }
-        .trust-item {
-          font-size: 12.5px;
-        }
-        .benefits {
-          grid-template-columns: 1fr;
-          max-width: 100%;
-        }
-        .worth-sub {
-          font-size: 13px;
-          margin-bottom: 28px;
-        }
-        .worth-slots-pill {
-          font-size: 12px;
-          padding: 10px 18px;
-          gap: 8px;
-        }
-        .about-row {
-          grid-template-columns: 1fr;
-          gap: 36px;
-          text-align: center;
-        }
-        .about-divider {
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .p2-type {
-          text-align: center;
-        }
-        .about-features {
-          align-items: center;
-        }
-        .about-feature {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 8px;
-        }
-        .about-feature-icon {
-          margin-top: 0;
-        }
-        .img-col {
-          align-items: center;
-        }
-        .h2-type {
-          font-size: clamp(24px, 7vw, 34px);
-        }
-        .trust-img-wrap img {
-          width: 100%;
-          border-radius: 12px;
-        }
-        .packages-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-        .pkg-card {
-          padding: 32px 22px 28px;
-        }
-        .pkg-section-header {
-          margin-bottom: 28px;
-        }
-        .notice-pill {
-          font-size: 11.5px;
-          padding: 8px 16px;
-          margin-bottom: 32px;
-        }
-        .vid-grid {
-          grid-template-columns: 1fr;
-          max-width: 400px;
-          margin: 0 auto;
-        }
-        .vid-cta .btn-primary {
-          max-width: 340px;
-          width: 100%;
-          justify-content: center;
-        }
-        .vid-overlay-shell {
-          width: 95vw;
-        }
-        .vid-overlay-topbar {
-          padding-bottom: 10px;
-        }
-        .vid-overlay-title {
-          font-size: 11.5px;
-        }
-        .cta-card {
-          grid-template-columns: 1fr;
-        }
-        .cta-heading {
-          font-size: clamp(24px, 7vw, 34px);
-        }
-        .cta-price-new {
-          font-size: clamp(44px, 10vw, 58px);
-        }
-        .cta-trust-row {
-          flex-wrap: wrap;
-          gap: 10px;
-          justify-content: center;
-        }
-        .cta-trust-sep {
-          display: none;
-        }
-        .cta-pills {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (max-width: 420px) {
-        .cta-left {
-          padding: 32px 20px 30px;
-        }
-        .cta-right {
-          padding: 28px 20px 32px;
-        }
-        .cta-pills {
-          grid-template-columns: 1fr;
-        }
-        .cta-pill {
-          font-size: 10.5px;
-        }
-        .btn-primary,
-        .btn-whatsapp {
-          max-width: 100%;
-          font-size: 14.5px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- HERO -->
-    <div class="hero-wrapper">
-      <div class="container">
-        <div class="hero-content">
-          <div class="price-badge">
-            <span class="label">2-Hour 1:1 Strategy Call</span>
-            <span class="sep">·</span>
-            <span class="price">Only ₹499</span>
+      <div class="hero-content">
+        <div class="price-badge">
+          <span class="label">2-Hour 1:1 Strategy Call</span>
+          <span class="sep">·</span>
+          <span class="price">Only ₹499</span>
+        </div>
+        <h1 class="h1-type">
+          Start Your Perfume Brand<br /><span class="accent">the Right Way</span><br />Avoid Costly Mistakes
+        </h1>
+        <p class="p1-type">
+          Before investing <strong>₹50K–₹5L</strong> in your perfume brand,
+          get a personalised roadmap built just for you — no guesswork, no
+          wasted money, no tech headaches.
+        </p>
+        <div class="trust-img-wrap-mobile">
+          <img src="assets/images/perfume.png" alt="Perfume brand strategy India" loading="lazy" width="640"
+            height="360" />
+        </div>
+        <div class="benefits">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-map" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-text">
+              <strong class="h3-type">Roadmap → Clear Launch Plan</strong>
+              <span class="p3-type">Step-by-step plan tailored to your budget &amp;
+                timeline</span>
+            </div>
           </div>
-          <h1 class="h1-type">
-            Start Your Perfume Brand<br />
-            <span class="accent">the Right Way</span><br />
-            Avoid Costly Mistakes
-          </h1>
-          <p class="p1-type">
-            Before investing <strong>₹50K–₹5L</strong> in your perfume brand,
-            get a personalised roadmap built just for you — no guesswork, no
-            wasted money, no tech headaches.
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-box-open" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-text">
+              <strong class="h3-type">Packaging → Brand Positioning Clarity</strong>
+              <span class="p3-type">Design identity that commands premium pricing</span>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-industry" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-text">
+              <strong class="h3-type">Manufacturing → Verified Manufacturer Access</strong>
+              <span class="p3-type">Work only with trusted, quality-tested suppliers</span>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <div class="benefit-text">
+              <strong class="h3-type">Margins → Profit Strategy (No Guesswork)</strong>
+              <span class="p3-type">Know your numbers before spending a single rupee</span>
+            </div>
+          </div>
+        </div>
+        <div class="cta-group">
+          <a href="#" class="btn-primary">Book 1:1 Consultation @ ₹499</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> 100%
+            Confidential
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> No Sales
+            Pitch
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> Actionable in
+            2 Hours
+          </div>
+          <div class="trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> Money-Back
+            Guarantee
+          </div>
+        </div>
+        <div class="trust-img-wrap">
+          <img src="assets/images/perfume.png" alt="600+ perfume brands launched in India with BanegaBrand"
+            loading="lazy" width="640" height="360" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="about-section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-row">
+        <div class="left-col">
+          <span class="eyebrow">About Your Expert</span>
+          <h2 class="h2-type" id="about-heading">
+            Meet Your<br /><span class="accent">Perfume Brand</span> Expert
+          </h2>
+          <span class="about-name">Mayank Tiwari</span>
+          <span class="about-role">Founder – Banega Brand</span>
+          <p class="p2-type">
+            Helped founders launch
+            <strong>profitable perfume brands with low budgets</strong> — no
+            fluff, no middlemen, just real results.
           </p>
-          <div class="benefits">
-            <div class="benefit-card">
-              <div class="benefit-icon"><i class="fa-solid fa-map"></i></div>
-              <div class="benefit-text">
-                <strong class="h3-type">Roadmap → Clear Launch Plan</strong>
-                <span class="p3-type"
-                  >Step-by-step plan tailored to your budget &amp;
-                  timeline</span
-                >
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span class="feat-title">Worked with 600+ Brands Across India</span><span class="feat-desc">Real brands,
+                  real founders, real growth stories</span>
               </div>
             </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-box-open"></i>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-industry" aria-hidden="true"></i>
               </div>
-              <div class="benefit-text">
-                <strong class="h3-type"
-                  >Packaging → Brand Positioning Clarity</strong
-                >
-                <span class="p3-type"
-                  >Design identity that commands premium pricing</span
-                >
+              <div>
+                <span class="feat-title">Direct Access to Verified Manufacturers</span><span class="feat-desc">Trusted
+                  perfume supplier network built over years</span>
               </div>
             </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-industry"></i>
+            <div class="about-feature">
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
               </div>
-              <div class="benefit-text">
-                <strong class="h3-type"
-                  >Manufacturing → Verified Manufacturer Access</strong
-                >
-                <span class="p3-type"
-                  >Work only with trusted, quality-tested suppliers</span
-                >
-              </div>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-icon">
-                <i class="fa-solid fa-chart-line"></i>
-              </div>
-              <div class="benefit-text">
-                <strong class="h3-type"
-                  >Margins → Profit Strategy (No Guesswork)</strong
-                >
-                <span class="p3-type"
-                  >Know your numbers before spending a single rupee</span
-                >
+              <div>
+                <span class="feat-title">Skip Middlemen, Launch Faster</span><span class="feat-desc">Go from idea to
+                  shelf without the usual delays</span>
               </div>
             </div>
           </div>
-          <div class="cta-group">
-            <a href="#" class="btn-primary"
-              ><i class="fa-solid fa-calendar-check"></i> Book 1:1 Consultation
-              @ ₹499</a
-            >
-            <a href="https://wa.me/" class="btn-whatsapp" target="_blank"
-              ><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a
-            >
+          <div class="about-cta">
+            <a href="#" class="btn-primary">Book 1:1 Consultation @ ₹499</a>
           </div>
-          <div class="trust-row">
-            <div class="trust-item">
-              <i class="fa-solid fa-check"></i> 100% Confidential
+        </div>
+        <div class="img-col">
+          <div class="img-frame">
+            <img src="assets/images/perfumefounderbanegabrand.png"
+              alt="Mayank Tiwari – Founder BanegaBrand, perfume brand consultant India" loading="lazy" width="420"
+              height="560" />
+            <div class="img-overlay">
+              <div class="founder-info">
+                <span class="founder-name">Mayank Tiwari</span><span class="founder-role">Founder, Banega Brand</span>
+              </div>
+              <div class="avail-pill">
+                <span class="dot-green"></span><span class="avail-text">Available Now</span>
+              </div>
             </div>
-            <div class="trust-item">
-              <i class="fa-solid fa-check"></i> No Sales Pitch
-            </div>
-            <div class="trust-item">
-              <i class="fa-solid fa-check"></i> Actionable in 2 Hours
-            </div>
-            <div class="trust-item">
-              <i class="fa-solid fa-check"></i> Money-Back Guarantee
-            </div>
-          </div>
-          <div class="trust-img-wrap">
-            <img
-              src="/image/anuman (1).png"
-              alt="Perfume brand trust"
-              loading="lazy"
-            />
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- WORTH -->
-    <section class="worth-section">
-      <div class="container">
-        <div class="worth-inner">
-          <span class="eyebrow">Why This ₹499 Consultation Is Worth It</span>
-          <div class="h2-type">
-            Trusted by <span class="accent">600+ Brands</span><br />Across India
-          </div>
-          <div class="worth-sub">
-            <strong>600+ Businesses Worked With</strong>
-            <span class="worth-sub-dot"></span>
-            <span>Real results, real brands, real growth</span>
-          </div>
-        </div>
-        <div class="worth-swiper-wrap">
-          <div class="swiper" id="worthSwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="worth-card">
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-calendar-days"></i>
-                  </div>
-                  <div class="worth-card-value">2 Hr</div>
-                  <div class="worth-card-label">1:1 Personal Strategy Call</div>
-                  <div class="worth-card-desc">
-                    Dedicated session built around your brand goals
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card featured">
-                  <div class="worth-card-badge">Limited Time</div>
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-clock"></i>
-                  </div>
-                  <div class="worth-card-value">₹499</div>
-                  <div class="worth-card-label">Consultation Fee Only</div>
-                  <div class="worth-card-desc">
-                    Limited time — regular fee applies after slots fill
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card">
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <div class="worth-card-value">₹7,000+</div>
-                  <div class="worth-card-label">Value You Receive</div>
-                  <div class="worth-card-desc">
-                    Strategy + Manufacturer Access + Branding
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card">
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-users"></i>
-                  </div>
-                  <div class="worth-card-value">10</div>
-                  <div class="worth-card-label">Slots Only</div>
-                  <div class="worth-card-desc">
-                    Exclusive access — very limited availability
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card">
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-calendar-days"></i>
-                  </div>
-                  <div class="worth-card-value">2 Hr</div>
-                  <div class="worth-card-label">1:1 Personal Strategy Call</div>
-                  <div class="worth-card-desc">
-                    Dedicated session built around your brand goals
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card featured">
-                  <div class="worth-card-badge">Limited Time</div>
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-clock"></i>
-                  </div>
-                  <div class="worth-card-value">₹499</div>
-                  <div class="worth-card-label">Consultation Fee Only</div>
-                  <div class="worth-card-desc">
-                    Limited time — regular fee applies after slots fill
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card">
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                  <div class="worth-card-value">₹7,000+</div>
-                  <div class="worth-card-label">Value You Receive</div>
-                  <div class="worth-card-desc">
-                    Strategy + Manufacturer Access + Branding
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="worth-card">
-                  <div class="worth-card-icon">
-                    <i class="fa-solid fa-users"></i>
-                  </div>
-                  <div class="worth-card-value">10</div>
-                  <div class="worth-card-label">Slots Only</div>
-                  <div class="worth-card-desc">
-                    Exclusive access — very limited availability
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="worth-slots-pill">
-          <span class="worth-slots-dot"></span>Only 10 slots available — book
-          before they fill
+  <section class="worth-section" aria-labelledby="worth-heading">
+    <div class="container">
+      <div class="worth-inner">
+        <span class="eyebrow">Why This ₹499 Consultation Is Worth It</span>
+        <h2 class="h2-type" id="worth-heading">
+          Trusted by <span class="accent">600+ Brands</span><br />Across India
+        </h2>
+        <div class="worth-sub">
+          <strong>600+ Businesses Worked With</strong>
+          <span class="worth-sub-dot"></span>
+          <span>Real results, real brands, real growth</span>
         </div>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about-section">
-      <div class="container">
-        <div class="about-row">
-          <div class="left-col">
-            <span class="eyebrow">About Your Expert</span>
-            <div class="h2-type">
-              Meet Your<br /><span class="accent">Product Launch</span> Expert
-            </div>
-            <span class="about-name">Mayank Tiwari</span>
-            <span class="about-role">Founder – Banega Brand</span>
-            <div class="about-divider"></div>
-            <p class="p2-type">
-              Helped founders launch
-              <strong>profitable brands with low budgets</strong> — no fluff, no
-              middlemen, just real results.
-            </p>
-            <div class="about-features">
-              <div class="about-feature">
-                <div class="about-feature-icon">
-                  <i class="fa-solid fa-users"></i>
+      <div class="worth-swiper-wrap">
+        <div class="swiper" id="worthSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="worth-card">
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
                 </div>
-                <div>
-                  <span class="feat-title"
-                    >Worked with 600+ Brands Across India</span
-                  ><span class="feat-desc"
-                    >Real brands, real founders, real growth stories</span
-                  >
-                </div>
-              </div>
-              <div class="about-feature">
-                <div class="about-feature-icon">
-                  <i class="fa-solid fa-industry"></i>
-                </div>
-                <div>
-                  <span class="feat-title"
-                    >Direct Access to Verified Manufacturers</span
-                  ><span class="feat-desc"
-                    >Trusted supplier network built over years</span
-                  >
-                </div>
-              </div>
-              <div class="about-feature">
-                <div class="about-feature-icon">
-                  <i class="fa-solid fa-bolt"></i>
-                </div>
-                <div>
-                  <span class="feat-title">Skip Middlemen, Launch Faster</span
-                  ><span class="feat-desc"
-                    >Go from idea to shelf without the usual delays</span
-                  >
+                <div class="worth-card-value">2 Hr</div>
+                <div class="worth-card-label">1:1 Personal Strategy Call</div>
+                <div class="worth-card-desc">
+                  Dedicated session built around your perfume brand goals
                 </div>
               </div>
             </div>
-            <div class="about-cta">
-              <a href="#" class="btn-primary"
-                ><i class="fa-solid fa-calendar-check"></i> Book 1:1
-                Consultation @ ₹499</a
-              >
-            </div>
-          </div>
-          <div class="img-col">
-            <div class="img-frame">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&fit=crop&crop=top"
-                alt="Mayank Tiwari – Founder Banega Brand"
-                loading="lazy"
-              />
-              <div class="img-overlay">
-                <div class="founder-info">
-                  <span class="founder-name">Mayank Tiwari</span
-                  ><span class="founder-role">Founder, Banega Brand</span>
+            <div class="swiper-slide">
+              <div class="worth-card featured">
+                <div class="worth-card-badge">Limited Time</div>
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-clock" aria-hidden="true"></i>
                 </div>
-                <div class="avail-pill">
-                  <span class="dot-green"></span
-                  ><span class="avail-text">Available Now</span>
+                <div class="worth-card-value">₹499</div>
+                <div class="worth-card-label">Consultation Fee Only</div>
+                <div class="worth-card-desc">
+                  Limited time — regular fee applies after slots fill
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="worth-card">
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+                <div class="worth-card-value">₹7,000+</div>
+                <div class="worth-card-label">Value You Receive</div>
+                <div class="worth-card-desc">
+                  Strategy + Manufacturer Access + Branding
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="worth-card">
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-users" aria-hidden="true"></i>
+                </div>
+                <div class="worth-card-value">10</div>
+                <div class="worth-card-label">Slots Only</div>
+                <div class="worth-card-desc">
+                  Exclusive access — very limited availability
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="worth-card">
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                </div>
+                <div class="worth-card-value">2 Hr</div>
+                <div class="worth-card-label">1:1 Personal Strategy Call</div>
+                <div class="worth-card-desc">
+                  Dedicated session built around your perfume brand goals
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="worth-card featured">
+                <div class="worth-card-badge">Limited Time</div>
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                </div>
+                <div class="worth-card-value">₹499</div>
+                <div class="worth-card-label">Consultation Fee Only</div>
+                <div class="worth-card-desc">
+                  Limited time — regular fee applies after slots fill
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="worth-card">
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+                <div class="worth-card-value">₹7,000+</div>
+                <div class="worth-card-label">Value You Receive</div>
+                <div class="worth-card-desc">
+                  Strategy + Manufacturer Access + Branding
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="worth-card">
+                <div class="worth-card-icon">
+                  <i class="fa-solid fa-users" aria-hidden="true"></i>
+                </div>
+                <div class="worth-card-value">10</div>
+                <div class="worth-card-label">Slots Only</div>
+                <div class="worth-card-desc">
+                  Exclusive access — very limited availability
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div class="worth-slots-pill">
+        Only 10 slots available — book before they fill
+      </div>
+    </div>
+  </section>
 
-    <!-- VIDEO -->
-    <section class="video-section">
-      <div class="container">
-        <div class="video-section-header">
-          <span class="eyebrow">Watch Before You Start</span>
-          <div class="h2-type">
-            See How Successful<br /><span class="accent">Perfume Brands</span>
-            Are Built
-          </div>
-          <p class="video-section-sub">
-            Watch real strategies, insights, and step-by-step guidance to launch
-            your brand the right way
-          </p>
-        </div>
-        <div class="vid-grid">
-          <div
-            class="vid-card"
-            onclick="
+  <section class="video-section" aria-labelledby="video-heading">
+    <div class="container">
+      <div class="video-section-header">
+        <span class="eyebrow">Watch Before You Start</span>
+        <h2 class="h2-type" id="video-heading">
+          See How Successful<br /><span class="accent">Perfume Brands</span>
+          Are Built
+        </h2>
+        <p class="video-section-sub">
+          Watch real strategies, insights, and step-by-step guidance to launch
+          your perfume brand the right way
+        </p>
+      </div>
+      <div class="vid-grid">
+        <article class="vid-card" onclick="
               openVideo(
                 'XnzTt32ojII',
                 'How to Start a Perfume Brand in India',
                 'Strategy',
               )
-            "
-          >
-            <div class="vid-thumb">
-              <iframe
-                src="https://www.youtube.com/embed/XnzTt32ojII?autoplay=1&mute=1&loop=1&playlist=XnzTt32ojII&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-              <div class="vid-glass"></div>
-              <div class="vid-play-btn">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
-              <div class="vid-mute-badge">
-                <i class="fa-solid fa-volume-xmark"></i> Muted Preview
-              </div>
-              <div class="vid-watch-badge">▶ Watch Full</div>
+            " role="button" tabindex="0" aria-label="Watch: How to Start a Perfume Brand in India">
+          <div class="vid-thumb">
+            <iframe
+              src="https://www.youtube.com/embed/XnzTt32ojII?autoplay=1&mute=1&loop=1&playlist=XnzTt32ojII&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
+              allow="autoplay; encrypted-media" allowfullscreen loading="lazy"
+              title="How to Start a Perfume Brand in India"></iframe>
+            <div class="vid-glass"></div>
+            <div class="vid-play-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
-            <div class="vid-info">
-              <span class="vid-tag">Strategy</span>
-              <div class="vid-title">How to Start a Perfume Brand in India</div>
-              <div class="vid-desc">
-                Step-by-step guide to launching your perfume brand with the
-                right foundation
+            <div class="vid-mute-badge">
+              <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
+              Muted Preview
+            </div>
+            <div class="vid-watch-badge">▶ Watch Full</div>
+          </div>
+          <div class="vid-info">
+            <span class="vid-tag">Strategy</span>
+            <h3 class="vid-title">How to Start a Perfume Brand in India</h3>
+            <p class="vid-desc">
+              Step-by-step guide to launching your perfume brand with the
+              right foundation
+            </p>
+            <div class="vid-bottom-row">
+              <div class="vid-bottom-icon">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <div class="vid-bottom-row">
-                <div class="vid-bottom-icon">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-                <div class="vid-bottom-label">
-                  Click to watch <span>with sound →</span>
-                </div>
+              <div class="vid-bottom-label">
+                Click to watch <span>with sound →</span>
               </div>
             </div>
           </div>
-          <div
-            class="vid-card"
-            onclick="
+        </article>
+        <article class="vid-card" onclick="
               openVideo(
                 'IFCaT9fcWzY',
                 'Build a Premium Perfume Brand Identity',
                 'Branding',
               )
-            "
-          >
-            <div class="vid-thumb">
-              <iframe
-                src="https://www.youtube.com/embed/IFCaT9fcWzY?autoplay=1&mute=1&loop=1&playlist=IFCaT9fcWzY&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-              <div class="vid-glass"></div>
-              <div class="vid-play-btn">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
-              <div class="vid-mute-badge">
-                <i class="fa-solid fa-volume-xmark"></i> Muted Preview
-              </div>
-              <div class="vid-watch-badge">▶ Watch Full</div>
+            " role="button" tabindex="0" aria-label="Watch: Build a Premium Perfume Brand Identity">
+          <div class="vid-thumb">
+            <iframe
+              src="https://www.youtube.com/embed/IFCaT9fcWzY?autoplay=1&mute=1&loop=1&playlist=IFCaT9fcWzY&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
+              allow="autoplay; encrypted-media" allowfullscreen loading="lazy"
+              title="Build a Premium Perfume Brand Identity"></iframe>
+            <div class="vid-glass"></div>
+            <div class="vid-play-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
-            <div class="vid-info">
-              <span class="vid-tag">Branding</span>
-              <div class="vid-title">
-                Build a Premium Perfume Brand Identity
+            <div class="vid-mute-badge">
+              <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
+              Muted Preview
+            </div>
+            <div class="vid-watch-badge">▶ Watch Full</div>
+          </div>
+          <div class="vid-info">
+            <span class="vid-tag">Branding</span>
+            <h3 class="vid-title">Build a Premium Perfume Brand Identity</h3>
+            <p class="vid-desc">
+              Learn how top perfume brands position themselves to command
+              premium pricing
+            </p>
+            <div class="vid-bottom-row">
+              <div class="vid-bottom-icon">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <div class="vid-desc">
-                Learn how top brands position themselves to command premium
-                pricing
-              </div>
-              <div class="vid-bottom-row">
-                <div class="vid-bottom-icon">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-                <div class="vid-bottom-label">
-                  Click to watch <span>with sound →</span>
-                </div>
+              <div class="vid-bottom-label">
+                Click to watch <span>with sound →</span>
               </div>
             </div>
           </div>
-          <div
-            class="vid-card"
-            onclick="
+        </article>
+        <article class="vid-card" onclick="
               openVideo(
                 '6eWnOmP3_Kk',
                 'Manufacturer Access &amp; Profit Margins',
                 'Insights',
                 286,
               )
-            "
-          >
-            <div class="vid-thumb">
-              <iframe
-                src="https://www.youtube.com/embed/6eWnOmP3_Kk?autoplay=1&mute=1&loop=1&playlist=6eWnOmP3_Kk&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&start=286"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-                loading="lazy"
-              ></iframe>
-              <div class="vid-glass"></div>
-              <div class="vid-play-btn">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
-              <div class="vid-mute-badge">
-                <i class="fa-solid fa-volume-xmark"></i> Muted Preview
-              </div>
-              <div class="vid-watch-badge">▶ Watch Full</div>
+            " role="button" tabindex="0" aria-label="Watch: Manufacturer Access and Profit Margins">
+          <div class="vid-thumb">
+            <iframe
+              src="https://www.youtube.com/embed/6eWnOmP3_Kk?autoplay=1&mute=1&loop=1&playlist=6eWnOmP3_Kk&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&start=286"
+              allow="autoplay; encrypted-media" allowfullscreen loading="lazy"
+              title="Manufacturer Access and Profit Margins"></iframe>
+            <div class="vid-glass"></div>
+            <div class="vid-play-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </div>
-            <div class="vid-info">
-              <span class="vid-tag">Insights</span>
-              <div class="vid-title">
-                Manufacturer Access &amp; Profit Margins
+            <div class="vid-mute-badge">
+              <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i>
+              Muted Preview
+            </div>
+            <div class="vid-watch-badge">▶ Watch Full</div>
+          </div>
+          <div class="vid-info">
+            <span class="vid-tag">Insights</span>
+            <h3 class="vid-title">
+              Manufacturer Access &amp; Profit Margins
+            </h3>
+            <p class="vid-desc">
+              Know your numbers before spending a single rupee on perfume
+              manufacturing
+            </p>
+            <div class="vid-bottom-row">
+              <div class="vid-bottom-icon">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
               </div>
-              <div class="vid-desc">
-                Know your numbers before spending a single rupee on
-                manufacturing
-              </div>
-              <div class="vid-bottom-row">
-                <div class="vid-bottom-icon">
-                  <i class="fa-solid fa-play"></i>
-                </div>
-                <div class="vid-bottom-label">
-                  Click to watch <span>with sound →</span>
-                </div>
+              <div class="vid-bottom-label">
+                Click to watch <span>with sound →</span>
               </div>
             </div>
           </div>
-        </div>
-        <div class="vid-cta">
-          <a href="#" class="btn-primary"
-            ><i class="fa-solid fa-calendar-check"></i> Book 1:1 Consultation @
-            ₹499</a
-          >
+        </article>
+      </div>
+      <div class="vid-cta">
+        <a href="#" class="btn-primary">Book 1:1 Consultation @ ₹499</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="vid-overlay" id="vidOverlay" onclick="closeOnBg(event)" role="dialog" aria-modal="true"
+    aria-label="Video player">
+    <div class="vid-overlay-shell" id="vidOverlayShell">
+      <div class="vid-overlay-topbar">
+        <button class="vid-overlay-close" onclick="closeVideo()">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Close
+        </button>
+        <div class="vid-overlay-title" id="overlayTitle">
+          &nbsp;<small id="overlayTag"></small>
         </div>
       </div>
-    </section>
+      <div class="vid-overlay-inner">
+        <iframe id="ytFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video player"></iframe>
+      </div>
+      <div class="vid-overlay-hint">
+        <i class="fa-solid fa-volume-high" aria-hidden="true"></i> Now playing
+        with full audio — click outside or press Esc to close
+      </div>
+    </div>
+  </div>
 
-    <!-- VIDEO OVERLAY -->
-    <div class="vid-overlay" id="vidOverlay" onclick="closeOnBg(event)">
-      <div class="vid-overlay-shell" id="vidOverlayShell">
-        <div class="vid-overlay-topbar">
-          <button class="vid-overlay-close" onclick="closeVideo()">
-            <i class="fa-solid fa-arrow-left"></i> Close
-          </button>
-          <div class="vid-overlay-title" id="overlayTitle">
-            &nbsp;<small id="overlayTag"></small>
+  <section class="packages-section" aria-labelledby="packages-heading">
+    <div class="container">
+      <div class="pkg-section-header">
+        <span class="eyebrow">Your Packages</span>
+        <h2 class="h2-type" id="packages-heading">
+          Choose Your <span class="accent">Next Step</span>
+        </h2>
+        <p class="pkg-section-sub">
+          Available after your consultation. Pick the level of support that
+          fits your ambition.
+        </p>
+      </div>
+      <div class="text-center mb-0">
+        <div class="notice-pill">
+          <strong>Next step</strong>&nbsp;·&nbsp; Unlocks after your
+          <strong>₹499 consultation</strong>
+        </div>
+      </div>
+      <div class="packages-grid">
+        <div class="pkg-card">
+          <span class="pkg-type-label">One-time · Guided Launch</span>
+          <div class="pkg-name">Starter Package</div>
+          <div class="pkg-tagline">
+            Perfect for first-time perfume founders
+          </div>
+          <div class="pkg-price-row">
+            <span class="pkg-price">₹25,000</span><span class="pkg-price-note">+ GST</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Brand name &amp; logo
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Packaging guidance
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Manufacturer connect
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Pricing strategy
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              30-day email support
+            </li>
+          </ul>
+          <div class="pkg-avail-note">
+            <i class="fa-solid fa-lock avail-icon" aria-hidden="true"></i><span class="pkg-avail-text"><strong>Unlocks
+                After Consultation</strong> — Book ₹499 session
+              first</span>
+          </div>
+          <a href="#" class="btn-pkg btn-pkg-outline"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Book Consultation First</a>
+        </div>
+        <div class="pkg-card pkg-featured">
+          <div class="pkg-badge">Most Popular</div>
+          <span class="pkg-type-label">Complete Execution</span>
+          <div class="pkg-name">Full Launch Package</div>
+          <div class="pkg-tagline">Everything handled for you</div>
+          <div class="pkg-price-row">
+            <span class="pkg-price">₹80,000</span><span class="pkg-price-note">+ 18% GST</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Branding + packaging
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Website + marketplace
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Legal + GST support
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Complete launch execution
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              90-day growth support
+            </li>
+          </ul>
+          <div class="pkg-avail-note">
+            <i class="fa-solid fa-lock avail-icon" aria-hidden="true"></i><span class="pkg-avail-text"><strong>Unlocks
+                After Consultation</strong> — Book ₹499 session
+              first</span>
+          </div>
+          <a href="#" class="btn-pkg btn-pkg-primary"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Book Consultation First</a>
+        </div>
+        <div class="pkg-card">
+          <span class="pkg-type-label">Growth · Scale Up</span>
+          <div class="pkg-name">Scale Package</div>
+          <div class="pkg-tagline">For perfume brands ready to grow fast</div>
+          <div class="pkg-price-row">
+            <span class="pkg-price">₹1.5L</span><span class="pkg-price-note">+ GST</span>
+          </div>
+          <div class="pkg-divider"></div>
+          <ul class="pkg-features">
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Performance marketing
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              D2C + retail strategy
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Influencer outreach
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Profit optimization
+            </li>
+            <li>
+              <span class="feat-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              Dedicated growth manager
+            </li>
+          </ul>
+          <div class="pkg-avail-note">
+            <i class="fa-solid fa-lock avail-icon" aria-hidden="true"></i><span class="pkg-avail-text"><strong>Unlocks
+                After Consultation</strong> — Book ₹499 session
+              first</span>
+          </div>
+          <a href="#" class="btn-pkg btn-pkg-outline"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Book Consultation First</a>
+        </div>
+      </div>
+      <p class="pkg-compare-note">
+        Not sure which package fits?
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        — we'll help you decide after your consultation.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-section-header">
+        <span class="eyebrow">Ready to Start?</span>
+        <h2 class="h2-type" id="cta-heading">
+          One Call. <span class="accent">Complete Clarity.</span>
+        </h2>
+        <p class="cta-section-sub">
+          Join 600+ founders who got their roadmap, avoided costly mistakes,
+          and launched their perfume brand with confidence.
+        </p>
+      </div>
+      <div class="cta-card">
+        <div class="cta-left">
+          <div class="cta-left-deco"></div>
+          <div class="cta-left-deco2"></div>
+          <div class="cta-left-glow"></div>
+          <div class="cta-eyebrow">
+            <div class="cta-eyebrow-line"></div>
+            <span class="cta-eyebrow-text">Stop Losing Money</span>
+          </div>
+          <h2 class="cta-heading">
+            Start Your <em>Perfume<br />Brand</em><br />the Right Way
+          </h2>
+          <p class="cta-para">
+            <strong>600+ brands</strong> have trusted this consultation to
+            avoid costly mistakes before investing
+            <strong>₹50K–₹5L</strong> in their brand.
+          </p>
+          <div class="cta-pills">
+            <div class="cta-pill">
+              <div class="cta-pill-check">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              Brand Roadmap
+            </div>
+            <div class="cta-pill">
+              <div class="cta-pill-check">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              Manufacturer Access
+            </div>
+            <div class="cta-pill">
+              <div class="cta-pill-check">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              Pricing Clarity
+            </div>
+            <div class="cta-pill">
+              <div class="cta-pill-check">
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              Packaging Guidance
+            </div>
           </div>
         </div>
-        <div class="vid-overlay-inner">
-          <iframe
-            id="ytFrame"
-            src=""
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-          ></iframe>
+        <div class="cta-right">
+          <div class="cta-session-label">2-Hour 1:1 Strategy Session</div>
+          <div class="cta-price-row">
+            <span class="cta-price-old">₹7,000</span><span class="cta-price-new">₹499</span>
+          </div>
+          <p class="cta-price-sub">
+            One-time <span>·</span> No recurring fees <span>·</span> Instant
+            confirmation
+          </p>
+          <a href="#" class="btn-cta-book">Book My 1:1 Consultation</a>
+          <div class="cta-trust-row">
+            <div class="cta-trust-item">
+              <i class="fa-solid fa-lock ti-lock" aria-hidden="true"></i>
+              Secure Payment
+            </div>
+            <div class="cta-trust-sep"></div>
+            <div class="cta-trust-item">
+              <i class="fa-solid fa-users ti-users" aria-hidden="true"></i>
+              600+ Brands
+            </div>
+            <div class="cta-trust-sep"></div>
+            <div class="cta-trust-item">
+              <div class="cta-trust-dot"></div>
+              10 Slots/Day
+            </div>
+          </div>
         </div>
-        <div class="vid-overlay-hint">
-          <i class="fa-solid fa-volume-high"></i> Now playing with full audio —
-          click outside or press Esc to close
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="bookModal" onclick="closeModalBg(event)" role="dialog" aria-modal="true"
+    aria-labelledby="modal-heading">
+    <div class="modal-shell">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close booking modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div class="modal-left">
+        <div class="modal-left-deco"></div>
+        <div class="modal-left-deco2"></div>
+        <div class="modal-left-glow"></div>
+        <div class="cta-eyebrow" style="margin-bottom: 18px">
+          <div class="cta-eyebrow-line"></div>
+          <span class="cta-eyebrow-text">Book Your Session</span>
+        </div>
+        <h2 class="modal-heading" id="modal-heading">
+          Start Your <em>Perfume<br />Brand</em> the Right Way
+        </h2>
+        <p class="modal-para">
+          Fill in your details and pay ₹499 to secure your 2-hour 1:1 perfume
+          brand strategy session.
+        </p>
+        <a href="https://banegabrand.com" class="modal-logo" target="_blank" rel="noopener noreferrer"
+          aria-label="BanegaBrand homepage">
+          <img src="https://banegabrand.com/public/frontend/assets/img/logo-KcH5C46Q.webp" alt="BanegaBrand Logo"
+            width="140" height="36" />
+        </a>
+        <div class="modal-trust">
+          <div class="modal-trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> 100%
+            Confidential
+          </div>
+          <div class="modal-trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> No Sales
+            Pitch
+          </div>
+          <div class="modal-trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> Money-Back
+            Guarantee
+          </div>
+          <div class="modal-trust-item">
+            <i class="fa-solid fa-check" aria-hidden="true"></i> Actionable in
+            2 Hours
+          </div>
+        </div>
+      </div>
+      <div class="modal-right">
+        <div class="modal-form-group">
+          <label class="modal-label" for="mName">Full Name</label>
+          <div class="modal-input-wrap">
+            <i class="fa-solid fa-user modal-input-icon" aria-hidden="true"></i><input type="text" class="modal-input"
+              id="mName" name="full_name" placeholder="Enter your full name" autocomplete="name" required />
+          </div>
+          <span class="modal-error" id="errName" role="alert">Please enter your name</span>
+        </div>
+        <div class="modal-form-group">
+          <label class="modal-label" for="mEmail">Email Address</label>
+          <div class="modal-input-wrap">
+            <i class="fa-solid fa-envelope modal-input-icon" aria-hidden="true"></i><input type="email"
+              class="modal-input" id="mEmail" name="email" placeholder="Enter your email" autocomplete="email"
+              required />
+          </div>
+          <span class="modal-error" id="errEmail" role="alert">Please enter a valid email</span>
+        </div>
+        <div class="modal-form-group">
+          <label class="modal-label" for="mPhone">Phone Number</label>
+          <div class="modal-input-wrap">
+            <i class="fa-solid fa-phone modal-input-icon" aria-hidden="true"></i><input type="tel" class="modal-input"
+              id="mPhone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required />
+          </div>
+          <span class="modal-error" id="errPhone" role="alert">Please enter a valid 10-digit number</span>
+        </div>
+        <div class="modal-form-group">
+          <label class="modal-label" for="mReferral">Referral Code</label>
+          <div class="modal-input-wrap">
+            <i class="fa-solid fa-tag modal-input-icon" aria-hidden="true"></i><input type="text" class="modal-input"
+              id="mReferral" name="referral_code" placeholder="Enter 6-digit code" maxlength="6"
+              style="text-transform: uppercase; letter-spacing: 0.12em" oninput="
+                  this.value = this.value
+                    .replace(/[^a-zA-Z0-9]/g, '')
+                    .toUpperCase()
+                " required />
+          </div>
+          <span class="modal-error" id="errReferral" role="alert">Referral code must be exactly 6 characters</span>
+        </div>
+        <div class="modal-summary">
+          <div class="modal-summary-title">Payment Summary</div>
+          <div class="modal-summary-row">
+            <span>Base Amount</span><span>₹499.00</span>
+          </div>
+          <div class="modal-summary-row">
+            <span>GST (18%)</span><span>- ₹89.82</span>
+          </div>
+          <div class="modal-summary-divider"></div>
+          <div class="modal-summary-total">
+            <span>Total to Pay</span><span class="modal-total-amt">₹409.18</span>
+          </div>
+        </div>
+        <button class="btn-modal-pay" onclick="submitModal()" type="button">
+          <i class="fa-solid fa-lock" aria-hidden="true"></i> Pay Now ₹409.18
+        </button>
+        <p class="modal-secure-note">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Secured
+          &amp; encrypted payment
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer-inner">
+          <div class="footer-col footer-links">
+            <a href="/termsandconditions.html">Terms &amp; Conditions</a>
+            <span class="footer-sep"></span>
+            <a href="/Privacypolicy.html">Privacy Policy</a>
+          </div>
+          <div class="footer-col footer-copy">
+            &copy; <span id="footerYear"></span> BanegaBrand. All rights reserved.
+          </div>
+          <div class="footer-col footer-social">
+            <a href="https://www.instagram.com/banegabrand" target="_blank" rel="noopener noreferrer" aria-label="BanegaBrand on Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@banegabrand" target="_blank" rel="noopener noreferrer" aria-label="BanegaBrand on YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/banegabrand" target="_blank" rel="noopener noreferrer" aria-label="BanegaBrand on Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="sticky-footer" role="complementary" aria-label="Quick booking footer">
+      <div class="container">
+        <div class="sticky-footer-inner">
+          <div class="sticky-footer-left">
+            <span class="sticky-footer-label">Start Today</span>
+            <span class="sticky-footer-price">₹499</span>
+          </div>
+          <a href="#" class="btn-sticky">Start My Brand</a>
         </div>
       </div>
     </div>
 
-    <!-- PACKAGES -->
-    <section class="packages-section">
-      <div class="container">
-        <div class="pkg-section-header">
-          <span class="eyebrow">Your Packages</span>
-          <div class="h2-type">
-            Choose Your <span class="accent">Next Step</span>
-          </div>
-          <p class="pkg-section-sub">
-            Available after your consultation. Pick the level of support that
-            fits your ambition.
-          </p>
-        </div>
-        <div class="text-center mb-0">
-          <div class="notice-pill">
-            <span class="pill-dot"></span
-            ><strong>Next step</strong>&nbsp;·&nbsp; Unlocks after your
-            <strong>₹499 consultation</strong>
-          </div>
-        </div>
-        <div class="packages-grid">
-          <div class="pkg-card">
-            <span class="pkg-type-label">One-time · Guided Launch</span>
-            <div class="pkg-name">Starter Package</div>
-            <div class="pkg-tagline">Perfect for first-time founders</div>
-            <div class="pkg-price-row">
-              <span class="pkg-price">₹25,000</span
-              ><span class="pkg-price-note">+ GST</span>
-            </div>
-            <div class="pkg-divider"></div>
-            <ul class="pkg-features">
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Brand name &amp; logo
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Packaging guidance
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Manufacturer connect
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Pricing strategy
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                30-day email support
-              </li>
-            </ul>
-            <div class="pkg-avail-note">
-              <i class="fa-solid fa-lock avail-icon"></i
-              ><span class="pkg-avail-text"
-                ><strong>Unlocks After Consultation</strong> — Book ₹499 session
-                first</span
-              >
-            </div>
-            <a href="#" class="btn-pkg btn-pkg-outline"
-              ><i class="fa-solid fa-calendar-check"></i> Book Consultation
-              First</a
-            >
-          </div>
-          <div class="pkg-card pkg-featured">
-            <div class="pkg-badge">Most Popular</div>
-            <span class="pkg-type-label">Complete Execution</span>
-            <div class="pkg-name">Full Launch Package</div>
-            <div class="pkg-tagline">Everything handled for you</div>
-            <div class="pkg-price-row">
-              <span class="pkg-price">₹80,000</span
-              ><span class="pkg-price-note">+ 18% GST</span>
-            </div>
-            <div class="pkg-divider"></div>
-            <ul class="pkg-features">
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Branding + packaging
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Website + marketplace
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Legal + GST support
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Complete launch execution
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                90-day growth support
-              </li>
-            </ul>
-            <div class="pkg-avail-note">
-              <i class="fa-solid fa-lock avail-icon"></i
-              ><span class="pkg-avail-text"
-                ><strong>Unlocks After Consultation</strong> — Book ₹499 session
-                first</span
-              >
-            </div>
-            <a href="#" class="btn-pkg btn-pkg-primary"
-              ><i class="fa-solid fa-calendar-check"></i> Book Consultation
-              First</a
-            >
-          </div>
-          <div class="pkg-card">
-            <span class="pkg-type-label">Growth · Scale Up</span>
-            <div class="pkg-name">Scale Package</div>
-            <div class="pkg-tagline">For brands ready to grow fast</div>
-            <div class="pkg-price-row">
-              <span class="pkg-price">₹1.5L</span
-              ><span class="pkg-price-note">+ GST</span>
-            </div>
-            <div class="pkg-divider"></div>
-            <ul class="pkg-features">
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Performance marketing
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                D2C + retail strategy
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Influencer outreach
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Profit optimization
-              </li>
-              <li>
-                <span class="feat-icon"><i class="fa-solid fa-check"></i></span>
-                Dedicated growth manager
-              </li>
-            </ul>
-            <div class="pkg-avail-note">
-              <i class="fa-solid fa-lock avail-icon"></i
-              ><span class="pkg-avail-text"
-                ><strong>Unlocks After Consultation</strong> — Book ₹499 session
-                first</span
-              >
-            </div>
-            <a href="#" class="btn-pkg btn-pkg-outline"
-              ><i class="fa-solid fa-calendar-check"></i> Book Consultation
-              First</a
-            >
-          </div>
-        </div>
-        <p class="pkg-compare-note">
-          Not sure which package fits?
-          <a href="https://wa.me/" target="_blank">Chat on WhatsApp</a> — we'll
-          help you decide after your consultation.
-        </p>
-      </div>
-    </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 
-    <!-- ═══════════════════════════════════════════
-     CTA SECTION — placed after packages
-════════════════════════════════════════════ -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-section-header">
-          <span class="eyebrow">Ready to Start?</span>
-          <div class="h2-type">
-            One Call. <span class="accent">Complete Clarity.</span>
-          </div>
-          <p class="cta-section-sub">
-            Join 600+ founders who got their roadmap, avoided costly mistakes,
-            and launched with confidence.
-          </p>
-        </div>
-
-        <div class="cta-card">
-          <div class="cta-left">
-            <div class="cta-left-deco"></div>
-            <div class="cta-left-deco2"></div>
-            <div class="cta-left-glow"></div>
-            <div class="cta-eyebrow">
-              <div class="cta-eyebrow-line"></div>
-              <span class="cta-eyebrow-text">Stop Losing Money</span>
-            </div>
-            <h2 class="cta-heading">
-              Start Your <em>Perfume<br />Brand</em><br />
-              the Right Way
-            </h2>
-            <p class="cta-para">
-              <strong>600+ brands</strong> have trusted this consultation to
-              avoid costly mistakes before investing
-              <strong>₹50K–₹5L</strong> in their brand.
-            </p>
-            <div class="cta-pills">
-              <div class="cta-pill">
-                <div class="cta-pill-check">
-                  <i class="fa-solid fa-check"></i>
-                </div>
-                Brand Roadmap
-              </div>
-              <div class="cta-pill">
-                <div class="cta-pill-check">
-                  <i class="fa-solid fa-check"></i>
-                </div>
-                Manufacturer Access
-              </div>
-              <div class="cta-pill">
-                <div class="cta-pill-check">
-                  <i class="fa-solid fa-check"></i>
-                </div>
-                Pricing Clarity
-              </div>
-              <div class="cta-pill">
-                <div class="cta-pill-check">
-                  <i class="fa-solid fa-check"></i>
-                </div>
-                Packaging Guidance
-              </div>
-            </div>
-          </div>
-
-          <div class="cta-right">
-            <div class="cta-session-label">2-Hour 1:1 Strategy Session</div>
-            <div class="cta-price-row">
-              <span class="cta-price-old">₹7,000</span>
-              <span class="cta-price-new">₹499</span>
-            </div>
-            <p class="cta-price-sub">
-              One-time <span>·</span> No recurring fees <span>·</span> Instant
-              confirmation
-            </p>
-            <a href="#" class="btn-cta-book">
-              <div class="btn-cta-book-dot"></div>
-              Book My 1:1 Consultation
-            </a>
-            <a href="https://wa.me/" target="_blank" class="btn-cta-wa">
-              <i class="fa-brands fa-whatsapp"></i>
-              Chat on WhatsApp
-            </a>
-            <div class="cta-trust-row">
-              <div class="cta-trust-item">
-                <i class="fa-solid fa-lock ti-lock"></i> Secure Payment
-              </div>
-              <div class="cta-trust-sep"></div>
-              <div class="cta-trust-item">
-                <i class="fa-solid fa-users ti-users"></i> 600+ Brands
-              </div>
-              <div class="cta-trust-sep"></div>
-              <div class="cta-trust-item">
-                <div class="cta-trust-dot"></div>
-                10 Slots/Day
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      var isLarge = window.innerWidth >= 1024;
-      var sw = new Swiper("#worthSwiper", {
-        loop: true,
-        centeredSlides: !isLarge,
-        speed: isLarge ? 0 : 3000,
-        autoplay: isLarge
-          ? false
-          : { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true },
-        freeMode: isLarge ? false : { enabled: true, momentum: false },
-        grabCursor: !isLarge,
-        slidesPerView: isLarge ? 4 : 1.3,
-        spaceBetween: 16,
-        breakpoints: {
-          480: { slidesPerView: 2.1, spaceBetween: 14, centeredSlides: true },
-          768: { slidesPerView: 3.1, spaceBetween: 16, centeredSlides: true },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 16,
-            centeredSlides: false,
-            loop: false,
-            autoplay: false,
-            freeMode: false,
-            grabCursor: false,
-          },
-        },
-      });
-      window.addEventListener("resize", function () {
-        var large = window.innerWidth >= 1024;
-        if (large !== isLarge) {
-          isLarge = large;
-          sw.destroy(true, true);
-          location.reload();
-        }
-      });
-      function openVideo(id, title, tag, start) {
-        var s = start ? "&start=" + start : "";
-        document.getElementById("ytFrame").src =
-          "https://www.youtube.com/embed/" +
-          id +
-          "?autoplay=1&rel=0&modestbranding=1" +
-          s;
-        var titleEl = document.getElementById("overlayTitle");
-        titleEl.childNodes[0].textContent = title || "";
-        document.getElementById("overlayTag").textContent = tag || "";
-        document.getElementById("vidOverlay").classList.add("active");
-        document.body.style.overflow = "hidden";
-      }
-      function closeVideo() {
-        document.getElementById("ytFrame").src = "";
-        document.getElementById("vidOverlay").classList.remove("active");
-        document.body.style.overflow = "";
-      }
-      function closeOnBg(e) {
-        if (e.target === document.getElementById("vidOverlay")) closeVideo();
-      }
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") closeVideo();
-      });
-    </script>
-  </body>
 </html>
